@@ -24,3 +24,13 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name : Build & Push Docker Image
+      uses: abhishek-070/docker-image-build-push-action@v1.0
+        with:
+          registry_url: 'docker.io'
+          image_name : 'nehaneoastra/sample-app'
+          repository_name: 'sample-app'
+          user_name: 'nehaneoastra'
+          password: 'Neha#261569'
+          image_version: 'v1.0'
+         
